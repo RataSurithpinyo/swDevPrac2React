@@ -1,27 +1,27 @@
 import styles from "./card.module.css";
 import Image from "next/image";
 
-export default function Card() {
+export default function Card({
+  hospitalName,
+  imgSrc,
+}: {
+  hospitalName: string;
+  imgSrc: string;
+}) {
   return (
-    <div className={styles.card}>
-      <div className={styles.cardimg}>
+    <div className="w-1/5 h-[300px] rounded-lg shadow-lg bg-white">
+      <div className="w-full h-[60%] relative rounded-t-lg">
         <Image
-          src={"/img/cardcover.jpg"}
+          src={imgSrc}
           alt="card cover"
           fill={true}
-          objectFit="cover"
+          className="object-cover rounded-t-lg"
         />
       </div>
-      <div style={{ color: "black" }} className={styles.cardtext}>
-        <h3 style={{ marginBottom: "5px", color: "#4477CE" }}>
-          <a href="https://en.wikipedia.org/wiki/Vaccination" target="_blank">
-            Vaccination
-          </a>
+      <div>
+        <h3 className="ml-2 mt-2 w-full h-[30%] p-[5px] font-normal underline decoration-sky-500">
+          {hospitalName}
         </h3>
-        <h6>
-          Vaccines are a way of artificially activating the immune system to
-          protect against infectious disease.
-        </h6>
       </div>
     </div>
   );

@@ -12,8 +12,8 @@ export default function Banner() {
         priority
       />
       <div className={styles.bannerText}>
-        <h1 style={{ marginBottom: "10px" }}>Vaccine Service Center</h1>
-        <h3>Find the right hospital. Make an appointment.</h3>
+        <h1 className="text-4xl font-semibold" style={{ marginTop: "40px", marginBottom: "10px" }}>Vaccine Service Center</h1>
+        <h3 className="text-xl">Find the right hospital. Make an appointment.</h3>
       </div>
     </div>
   );
