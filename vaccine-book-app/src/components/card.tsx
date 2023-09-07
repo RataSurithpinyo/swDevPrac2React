@@ -1,5 +1,5 @@
-import styles from "./card.module.css";
 import Image from "next/image";
+import InteractiveCard from "./interactiveCard";
 
 export default function Card({
   hospitalName,
@@ -8,8 +8,9 @@ export default function Card({
   hospitalName: string;
   imgSrc: string;
 }) {
+
   return (
-    <div className="w-1/5 h-[300px] rounded-lg shadow-lg bg-white">
+    <InteractiveCard contentName={ hospitalName }>
       <div className="w-full h-[60%] relative rounded-t-lg">
         <Image
           src={imgSrc}
@@ -23,6 +24,6 @@ export default function Card({
           {hospitalName}
         </h3>
       </div>
-    </div>
+    </InteractiveCard>
   );
 }
