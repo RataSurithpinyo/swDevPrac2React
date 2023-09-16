@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { use, useState } from "react";
 import styles from "./banner.module.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Banner() {
   const covers = [
@@ -11,6 +12,7 @@ export default function Banner() {
     "/img/cover4.jpg",
   ];
   const [index, setIndex] = useState(0);
+  const router = useRouter();
 
   return (
     <div
@@ -37,6 +39,17 @@ export default function Banner() {
           Find the right hospital. Make an appointment.
         </h3>
       </div>
+      <button
+        className="bg-white text-cyan-600 border border-cyan-600 
+      font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-1 right-2 hover:bg-cyan-600 hover:text-white"
+        onClick={(e) => {
+          router.push("/hospital");
+          e.stopPropagation();
+        }}
+      >
+        {/* ต้องยก layer ในแกน z ไม่งั้นจะไม่เห็นปุ่่ม */}
+        Select your hospital NOW
+      </button>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Card({
   const [value, setValue] = useState(ratingValue);
 
   useEffect(() => {
-    // this runs whenever ratingValue changes
+    // this runs whenever ratingValue changes from the ratingValue prop.
     setValue(ratingValue);
   }, [ratingValue]);
 
@@ -43,7 +43,9 @@ export default function Card({
           id={hospitalName}
           name="simple-controlled"
           value={value}
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
           onChange={(event, newValue) => {
             const ratingValue = newValue ?? 0;
             setValue(ratingValue);
