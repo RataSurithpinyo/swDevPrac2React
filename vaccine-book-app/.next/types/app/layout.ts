@@ -1,4 +1,4 @@
-// File: /Users/rata/Desktop/work/4th_year/SW DEV PRAC/React/vaccine-book-app/src/app/layout.tsx
+// File: /Users/rata/Desktop/work/4th_year/SwDevPrac/React/vaccine-book-app/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

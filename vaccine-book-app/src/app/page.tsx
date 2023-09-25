@@ -1,13 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import Banner from "@/components/banner";
-import Card from "@/components/card";
-import CardPanel from "@/components/cardPanel";
+import PromoteCard from "@/components/promoteCard";
 
 export default function Home() {
   return (
     <main>
-      <Banner/>
+      <Banner />
+      <PromoteCard />
     </main>
   );
 }
