@@ -12,8 +12,8 @@ export default function Card({
 }: {
   hospitalName: string;
   imgSrc: string;
-  hospitalList: (hospitalName: string, rating: number) => void;
-  ratingValue: number;
+  hospitalList?: (hospitalName: string, rating: number) => void;
+  ratingValue?: number;
 }) {
   const [value, setValue] = useState(ratingValue);
 
@@ -38,20 +38,24 @@ export default function Card({
         </h3>
       </div>
       <div className="ml-2 w-full h-[30%] p-[5px] font-normal decoration-sky-500">
-        <h3>Rating</h3>
-        <Rating
-          id={hospitalName}
-          name="simple-controlled"
-          value={value}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-          onChange={(event, newValue) => {
-            const ratingValue = newValue ?? 0;
-            setValue(ratingValue);
-            hospitalList(hospitalName, ratingValue);
-          }}
-        />
+        {/* <h3>Rating</h3> */}
+        {hospitalList ? (
+          <Rating
+            id={hospitalName}
+            name="simple-controlled"
+            value={value}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            onChange={(event, newValue) => {
+              const ratingValue = newValue ?? 0;
+              setValue(ratingValue);
+              hospitalList(hospitalName, ratingValue);
+            }}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </InteractiveCard>
   );
