@@ -1,10 +1,33 @@
 import DateReserve from "@/components/dateReserve";
 import TextField from "@mui/material/TextField";
-export default function Booking() {
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import getUserProfile from "@/libs/getUserProfile";
+
+export default async function Booking() {
+  const session = await getServerSession(authOptions);
+  // console.log(session)
+  if (!session || !session.user.token) return null;
+  const profile = await getUserProfile(session.user.token);
+  // console.log("profile", profile)
+  var createdAt = new Date(profile.data.createdAt);
+  // console.log(createdAt.toString())
+
   return (
     <main className="w-[100%] flex flex-col items-center space-y-4">
+      <div>
+        <div className="mt-24 text-xl text-center underline decoration-sky-500 ">
+          User Profile
+        </div>
+        <div className="mt-4 text-sm text-center">
+          <p>Name: {profile.data.name}</p>
+          <p>Email: {profile.data.email}</p>
+          <p>Tel: {profile.data.tel}</p>
+          <p>Member since {createdAt.toString()}</p>
+        </div>
+      </div>
       <div className="mt-24 text-xl text-center underline decoration-sky-500 ">
-        Book Your Vaccination.
+        Book Your Vaccination
       </div>
 
       <div className="w-fit space-y-2">
@@ -46,7 +69,7 @@ export default function Booking() {
 
         <div className="text-md text-left text-gray-600">
           <div className="mt-3">วันที่ต้องการรับวัคซีน</div>
-          <DateReserve/>
+          <DateReserve />
         </div>
       </div>
 
