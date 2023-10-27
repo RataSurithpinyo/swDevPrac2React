@@ -23,10 +23,15 @@ export default async function TopMenu() {
             </div>
           </Link>
         )}
+        <Link href="/mybooking">
+            <div className="w-40 text-center ml-4 mt-auto mb-auto color underline decoration-sky-500 text-gray-500">
+              My Booking
+            </div>
+          </Link>
       </div>
 
       <div className="flex items-center">
-        <TopMenuItem title="Booking" pageRef="/booking" />
+        <TopMenuItem title="Booking" pageRef="/hospital" />
         <Image
           src="/img/logo.png"
           className="mt-1 ml-3 mr-5 mb-1 h-10/12 w-auto flex justify-end"
