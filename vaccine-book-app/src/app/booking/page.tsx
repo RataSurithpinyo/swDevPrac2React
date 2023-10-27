@@ -15,21 +15,21 @@ export default function Booking() {
   const hospital = urlParams.get("hospital");
   // console.log("hid & hospital", hid, hospital)
   // name, id, hospital, date
-  const dispatch = useDispatch<AppDispatch>()
+  const dispatch = useDispatch<AppDispatch>();
   const makeBooking = () => {
-    console.log("test click")
-    if(hid && hospital && date && name) {
+    console.log("test click");
+    if (hid && hospital && date && name) {
       const item: BookingItem = {
         name: name,
         surname: surname,
         id: id,
         hospital: hospital,
-        bookDate: dayjs(date).format("YYYY/MM/DD")
-      }
-      console.log(item)
-      dispatch(addReservation(item))
+        bookDate: dayjs(date).format("YYYY/MM/DD"),
+      };
+      console.log(item);
+      dispatch(addReservation(item));
     }
-  }
+  };
   const [date, setDate] = useState<Dayjs | null>(null);
   const [name, setName] = useState<string>("");
   const [surname, setSurname] = useState<string>("");
@@ -89,7 +89,6 @@ export default function Booking() {
           </label>
         </div>
 
-
         <div className="text-md text-left text-gray-600 ">
           <label className="block">
             <span className="text-slate-700">รหัสประจำตัวประชาชน</span>
@@ -132,8 +131,10 @@ export default function Booking() {
         </div>
       </div>
 
-      <button className="block rounded-md bg-sky-600 hover:bg-indigo-950 px-3 py-2 text-white shadow-sm"
-      onClick={makeBooking}>
+      <button
+        className="block rounded-md bg-sky-600 hover:bg-indigo-950 px-3 py-2 text-white shadow-sm"
+        onClick={makeBooking}
+      >
         Book Hospital
       </button>
     </main>
