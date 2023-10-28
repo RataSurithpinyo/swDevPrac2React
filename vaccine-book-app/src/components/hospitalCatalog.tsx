@@ -26,7 +26,7 @@ export default async function HospitalCatalog({ hospitalPromise }) {
           <Link
             key={hospitalItem.id}
             href={`/hospital/${hospitalItem.id}`}
-            className="w-1/5"
+            className="w-[100%] sm:w-[50%] md:w-[30%] lg:w-[25%] p-2 sm:p-4 md:p-4 lg:p-8"
           >
             <Card
               hospitalName={hospitalItem.name}

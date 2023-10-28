@@ -12,7 +12,7 @@ export default async function TopMenu() {
       <div className="flex items-center">
         {session ? (
           <Link href="/api/auth/signout">
-            <div className="w-40 text-center ml-6 mt-auto mb-auto color underline decoration-sky-500 text-gray-500">
+            <div className="w-48 text-center ml-6 mt-auto mb-auto color underline decoration-sky-500 text-gray-500">
               Sign out of {session.user?.name}
             </div>
           </Link>
@@ -24,10 +24,10 @@ export default async function TopMenu() {
           </Link>
         )}
         <Link href="/mybooking">
-            <div className="w-40 text-center ml-4 mt-auto mb-auto color underline decoration-sky-500 text-gray-500">
-              My Booking
-            </div>
-          </Link>
+          <div className="w-40 text-center ml-2 mt-auto mb-auto color underline decoration-sky-500 text-gray-500">
+            My Booking
+          </div>
+        </Link>
       </div>
 
       <div className="flex items-center">
