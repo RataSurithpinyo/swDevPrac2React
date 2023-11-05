@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import Card from "./card";
 import Link from "next/link";
 
-export default async function HospitalCatalog({ hospitalPromise }) {
+export default async function HospitalCatalog({ hospitalPromise }: any) {
   const hospitalJsonReady = await hospitalPromise;
   // if (!hospitalJsonReady) {
   //   return null;
