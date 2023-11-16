@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/mybooking/page": "app/mybooking/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+  "/(hospitalinfo)/hospital/page": "app/(hospitalinfo)/hospital/page.js"
 }
